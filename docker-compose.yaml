@@ -9,3 +9,9 @@ services:
             SEMAPHORE_ADMIN_PASSWORD: changeme
             SEMAPHORE_ADMIN_NAME: Admin
             SEMAPHORE_ADMIN_EMAIL: admin@localhost
+        volumes:
+            - semaphore_data:/var/lib/semaphore
+            - semaphore_config:/etc/semaphore
+volumes:
+    semaphore_data:
+    semaphore_config:
