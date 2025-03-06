@@ -13,4 +13,4 @@
        msg: "Rebooting machine in 5 seconds"
        pre_reboot_delay: 5
        reboot_command: reboot
-       search_paths: [/run/current-system/sw/bin/reboot]
+       search_paths: [/run/current-system/sw/bin/]
