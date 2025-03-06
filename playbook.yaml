@@ -1,4 +1,4 @@
-- name: My first play
+- name: POC
   hosts: myhosts
   tasks:
    - name: Ping my hosts
@@ -9,8 +9,12 @@
        msg: Hello world
 
    - name: Reboot machine and send a message
+     become: yes
+     become_method: sudo
+     vars:
+       ansible_become_pass: "123"
      ansible.builtin.reboot:
-       msg: "Rebooting machine in 5 seconds"
+       msg: Rebooting machine in 5 seconds
        pre_reboot_delay: 5
        reboot_command: reboot
        search_paths: [/run/current-system/sw/bin/]
